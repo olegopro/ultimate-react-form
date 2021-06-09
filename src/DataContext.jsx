@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState } from 'react'
 
 const DataContext = createContext(null)
 
-export const DataProvider = ({}) => {
+export const DataProvider = ({ children }) => {
 	const [data, setData] = useState({})
 
 	const setValues = values => {
