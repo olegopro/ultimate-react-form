@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { Header } from './Components/Header'
 import { Step1 } from './Step1'
 
@@ -12,14 +12,14 @@ function App() {
 	return (
 		<>
 			<Header />
-			<BrowserRouter>
+			<Router>
 				<Switch>
 					<Route exact path="/" component={Step1} />
-					<Route exact path="/step2" component={Step2} />
-					<Route exact path="/step3" component={Step3} />
-					<Route exact path="/result" component={Result} />
+					<Route path="/step2" component={Step2} />
+					<Route path="/step3" component={Step3} />
+					<Route path="/result" component={Result} />
 				</Switch>
-			</BrowserRouter>
+			</Router>
 		</>
 	)
 }

@@ -18,7 +18,7 @@ export const Header = () => {
 
 	return (
 		<Typography className={styles.root} component="h1" variant="h5">
-			The Uktimate Form Challenge
+			The Ultimate Form Challenge
 		</Typography>
 	)
 }
