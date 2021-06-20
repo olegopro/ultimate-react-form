@@ -2,6 +2,7 @@ import { yupResolver } from '@hookform/resolvers'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { useForm } from 'react-hook-form'
+import { useHistory } from 'react-router-dom'
 import * as yup from 'yup'
 import { Form } from './Components/Form'
 import { Input } from './Components/Input'
@@ -20,12 +21,13 @@ const schema = yup.object().shape({
 })
 
 export const Step1 = () => {
+	const history = useHistory()
 	const { register, handleSubmit, errors } = useForm({
 		mode: 'onBlur',
 		resolver: yupResolver(schema)
 	})
 
-	const onSubmit = data => console.log(data)
+	const onSubmit = data => history.push('/step2')
 
 	return (
 		<MainContainer>
