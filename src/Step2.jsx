@@ -1,3 +1,4 @@
+// @ts-nocheck
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
 import { useForm } from 'react-hook-form'
@@ -46,7 +47,7 @@ export const Step2 = () => {
 					ref={register}
 					id="email"
 					type="email"
-					label="email"
+					label="Email"
 					name="email"
 					required
 					error={!!errors.email}

@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { yupResolver } from '@hookform/resolvers'
 import Typography from '@material-ui/core/Typography'
 import React from 'react'
@@ -22,12 +23,16 @@ const schema = yup.object().shape({
 
 export const Step1 = () => {
 	const history = useHistory()
+	const { data, setValues } = useData()
 	const { register, handleSubmit, errors } = useForm({
 		mode: 'onBlur',
 		resolver: yupResolver(schema)
 	})
 
-	const onSubmit = data => history.push('/step2')
+	const onSubmit = data => {
+		history.push('/step2')
+		setValues(data)
+	}
 
 	return (
 		<MainContainer>
